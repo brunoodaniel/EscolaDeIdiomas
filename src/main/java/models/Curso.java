@@ -22,7 +22,7 @@ public class Curso {
 	@Column(name="descricaoCurso")
     private String descricao;
 	
-	@OneToMany
+	@OneToMany(cascade = CascadeType.REMOVE)
 	@JoinTable(name = "curso_aluno",
     	joinColumns = @JoinColumn(name = "curso_id"),
     	inverseJoinColumns = @JoinColumn(name = "aluno_id"))
